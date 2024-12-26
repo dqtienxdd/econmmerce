@@ -16,9 +16,11 @@ npm install
 yarn install
 # or
 pnpm install
+```
 
 Then, run the development server:
 
+```bash
 npm run dev
 # or
 yarn dev
@@ -26,6 +28,8 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+
 Open http://localhost:3000 with your browser to see the result.
 
 You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
@@ -41,7 +45,9 @@ To upload images to the database, use the uploadImage function.
 Delete Products
 To delete all products, use the deleteProducts function. Run the function using the following command:
 
+```bash
 npx tsx <file.name>.mjs
+```
 
 Data File
 The products.ndjson file will be the data file pushed to Sanity.
@@ -49,7 +55,9 @@ The products.ndjson file will be the data file pushed to Sanity.
 Access Sanity Studio
 To access Sanity Studio, run the following command:
 
+```bash
 sanity dev
+```
 
 Learn More
 To learn more about Next.js, take a look at the following resources:
