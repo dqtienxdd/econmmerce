@@ -1,0 +1,106 @@
+[
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "title": "Product Name"
+      },
+      {
+        "name": "price",
+        "type": "number"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "of": [
+          {
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Jackets",
+              "value": "jackets"
+            },
+            {
+              "title": "Sweaters",
+              "value": "sweaters"
+            },
+            {
+              "title": "T-Shirts",
+              "value": "tshirts"
+            },
+            {
+              "title": "Pants",
+              "value": "pants"
+            }
+          ]
+        },
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "specName",
+                "type": "string",
+                "title": "Specification Name"
+              },
+              {
+                "name": "specValue",
+                "type": "string",
+                "title": "Specification Value"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "specifications",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "size",
+                "type": "string"
+              },
+              {
+                "name": "color",
+                "type": "string"
+              },
+              {
+                "name": "price",
+                "type": "number"
+              },
+              {
+                "name": "stock",
+                "type": "number"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "variations",
+        "type": "array",
+        "title": "Product Variations"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  }
+]

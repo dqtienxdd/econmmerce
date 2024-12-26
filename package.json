@@ -1,0 +1,50 @@
+{
+  "name": "hybrbase-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.2.3",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/inter": "^5.1.0",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@mui/icons-material": "^6.3.0",
+    "@mui/material": "^6.3.0",
+    "@mui/styles": "^6.3.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.68.3",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^11.15.0",
+    "next": "15.1.2",
+    "next-sanity": "^9.8.30",
+    "node-fetch": "^3.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "sanity": "^3.68.3",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.2",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  }
+}
