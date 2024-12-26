@@ -4,9 +4,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Project Overview
 
-This project is an e-commerce platform that includes a product list page and a product detail page. The cart functionality is not yet implemented. The project uses [Sanity](https://www.sanity.io/) to store the database.
+Hybrbase is an e-commerce platform that includes a **product list page** and a **product detail page**. Currently, the **cart functionality** is not yet implemented. The project integrates with [Sanity](https://www.sanity.io/) to store the database.
+
+### Features Implemented:
+- Product list page
+- Product detail page
+- Image upload functionality for products (integrated with Sanity)
+- Ability to delete all products via a function
+
+### Limitations:
+- The data is currently being added manually as the dataset has not been obtained yet.
+- Several improvements and additional pages are yet to be developed.
 
 ## Getting Started
+
+Follow these steps to set up the project on your local machine.
+
+### 1. Install Dependencies
 
 First, install the required dependencies:
 
@@ -16,11 +30,13 @@ npm install
 yarn install
 # or
 pnpm install
-```
 
+```
+### 2. Run the Development Server
 Then, run the development server:
 
 ```bash
+
 npm run dev
 # or
 yarn dev
@@ -30,46 +46,44 @@ pnpm dev
 bun dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Visit http://localhost:3000 in your browser to view the website. The page will auto-update as you edit the files.
 
-You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
-
-This project uses next/font to automatically optimize and load Geist, a new font family for Vercel.
+### 3. Access Sanity Studio
+To access Sanity Studio, run the following command:
+```bash
+sanity dev
+```
+This will allow you to manage the content and data for the project through the Sanity interface.
 
 Sanity Integration
-The project uses Sanity to store the database. Currently, data is being added manually, so it may not be perfect. There are many rooms for improvement and a lot of pages to be done.
+This project uses Sanity to store the database. Currently, data is being manually added, so it may not be perfect. There are many areas for improvement and more pages to be developed.
 
 Upload Image Function
-To upload images to the database, use the uploadImage function.
+To upload images to the database, use the following function. This allows you to manage product images and store them in Sanity.
 
 Delete Products
-To delete all products, use the deleteProducts function. Run the function using the following command:
+To delete all products in the database, use the deleteProducts function. Run the function using the following command:
 
 ```bash
 npx tsx <file.name>.mjs
 ```
-
 Data File
-The products.ndjson file will be the data file pushed to Sanity.
-
-Access Sanity Studio
-To access Sanity Studio, run the following command:
-
-```bash
-sanity dev
+The products.ndjson file is the data file used to push product data to Sanity. To push data to Sanity, use the following command:
+    
+```bash 
+sanity dataset import products.ndjson production
 ```
-
-Learn More
-To learn more about Next.js, take a look at the following resources:
-
-Next.js Documentation - learn about Next.js features and API.
-Learn Next.js - an interactive Next.js tutorial.
-You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
-
-Deploy on Vercel
-The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
-
-Check out our Next.js deployment documentation for more details.
-
 Future Improvements
-There are many areas for improvement and additional pages to be completed. Contributions and suggestions are welcome!
+Implement cart functionality
+Automate data population from a dataset (currently added manually)
+Add more pages and features for the platform
+Improve the UI/UX and responsiveness
+Learn More
+To learn more about Next.js, check out the following resources:
+
+Next.js Documentation - Learn about Next.js features and API.
+Learn Next.js - An interactive Next.js tutorial.
+Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the Vercel platform, created by the team behind Next.js.
+
+For more details, check out the Next.js deployment documentation.
