@@ -10,8 +10,10 @@ import {
   Button,
   Typography,
   Container,
+  Card,
+  CardMedia,
+  CardContent,
 } from "@mui/material";
-import ProductCard from "@/components/Product/ProductCard";
 import Header from "@/components/Layout/Header";
 import sanityClient from "../config/sanity";
 
@@ -81,7 +83,7 @@ const ShopPage = () => {
       {/* Product Section */}
       <Box sx={{ backgroundColor: "white", py: 4 }}>
         <Container>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 4 }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 4 }}>
             <FormControl sx={{ minWidth: 150 }}>
               <InputLabel>Sort by</InputLabel>
               <Select
@@ -101,8 +103,45 @@ const ShopPage = () => {
             {currentProducts.map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product._id}>
                 <Link href={`/product/${product._id}`} passHref>
-                  <Box sx={{ textDecoration: 'none' }}>
-                    <ProductCard product={product} />
+                  <Box
+                    component="a"
+                    sx={{
+                      textDecoration: "none",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
+                    }}
+                  >
+                    <Card
+                      sx={{
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                        "&:hover": {
+                          transform: "scale(1.05)",
+                          boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+                        },
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        height="200"
+                        image={product.imageUrl}
+                        alt={product.name}
+                        sx={{
+                          transition: "transform 0.3s ease",
+                          "&:hover": {
+                            transform: "scale(1.1)",
+                          },
+                        }}
+                      />
+                      <CardContent>
+                        <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                          {product.name}
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary">
+                          ${product.price}
+                        </Typography>
+                      </CardContent>
+                    </Card>
                   </Box>
                 </Link>
               </Grid>

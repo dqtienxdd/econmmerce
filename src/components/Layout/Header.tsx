@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { usePathname } from "next/navigation";
 import {
@@ -9,14 +10,24 @@ import {
   IconButton,
   Box,
   Container,
+  Badge,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useCart } from "../../contexts/CartContext";
+import Link from "next/link";
 
 const Header = () => {
-  const pathname = usePathname(); // Get the current path
+  const pathname = usePathname();
   const isHomePage = pathname === "/";
+
+  let cart = [];
+  try {
+    ({ cart } = useCart());
+  } catch (error) {
+    console.warn("useCart must be used within a CartProvider:", error);
+  }
 
   return (
     <AppBar
@@ -30,52 +41,45 @@ const Header = () => {
     >
       <Container maxWidth="lg">
         <Toolbar>
-          {/* Logo */}
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, fontWeight: "bold" }}
-          >
-            Ecommerce
-          </Typography>
+          {/* Logo Link */}
+          <Link href="/" passHref>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                cursor: "pointer",
+                textDecoration: "none",
+                color: isHomePage ? "black" : "white",
+              }}
+            >
+              Ecommerce
+            </Typography>
+          </Link>
 
           {/* Navigation Links */}
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <Button
-              color="inherit"
-              href="/shop"
-              sx={{ color: isHomePage ? "black" : "white" }}
-            >
+          <Box sx={{ display: "flex", gap: 2, ml: "auto" }}>
+            <Button href="/shop" sx={{ color: isHomePage ? "black" : "white" }}>
               Shop
             </Button>
-            <Button
-              color="inherit"
-              href="/stories"
-              sx={{ color: isHomePage ? "black" : "white" }}
-            >
+            <Button href="/stories" sx={{ color: isHomePage ? "black" : "white" }}>
               Stories
             </Button>
-            <Button
-              color="inherit"
-              href="/about"
-              sx={{ color: isHomePage ? "black" : "white" }}
-            >
+            <Button href="/about" sx={{ color: isHomePage ? "black" : "white" }}>
               About
             </Button>
           </Box>
 
-          {/* Search and Icons */}
+          {/* Action Icons */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <IconButton color="inherit">
+            <IconButton>
               <SearchIcon sx={{ color: isHomePage ? "black" : "white" }} />
             </IconButton>
-            <IconButton color="inherit" href="/cart">
-              <ShoppingCartIcon
-                sx={{ color: isHomePage ? "black" : "white" }}
-              />
+            <IconButton href="/cart">
+              <Badge badgeContent={cart.length || 0} color="secondary">
+                <ShoppingCartIcon sx={{ color: isHomePage ? "black" : "white" }} />
+              </Badge>
             </IconButton>
             <Button
-              color="inherit"
               href="/login"
               startIcon={<AccountCircleIcon />}
               sx={{ color: isHomePage ? "black" : "white" }}
