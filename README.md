@@ -1,7 +1,9 @@
 
 # Hybrbase E-commerce
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). The project integrates with [Sanity](https://www.sanity.io/) for backend content management and includes features for a product list page, product detail page, and image management.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). 
+The project integrates with [Sanity](https://www.sanity.io/) for backend content management and includes features for a product list page, 
+product detail page, and image management.
 
 ---
 
@@ -38,8 +40,6 @@ Hybrbase is an e-commerce platform that features:
 
 Follow the steps below to set up and use the project locally:
 
----
-
 ### 1. **Clone the Repository**
 
 Clone this repository to your local machine:
@@ -72,19 +72,16 @@ pnpm install
 Sanity is used to manage the backend data for this project.
 
 #### Steps to Access Sanity:
-1. Navigate to the Sanity Studio directory:
-   ```bash
-   cd sanity
-   ```
-2. Install dependencies for Sanity:
+
+1. Install dependencies for Sanity:
    ```bash
    npm install
    ```
-3. Run the Sanity development server:
+2. Run the Sanity development server:
    ```bash
    sanity dev
    ```
-4. Open the link provided in the terminal to access the Sanity Studio in your browser.
+3. Open the link provided in the terminal to access the Sanity Studio in your browser.
 
 Use the Sanity Studio to add, edit, and delete product data.
 
@@ -92,24 +89,21 @@ Use the Sanity Studio to add, edit, and delete product data.
 
 ### 4. **Run the Frontend (Shop)**
 
-To start the frontend of the e-commerce platform:
+To start the frontend of the e-commerce platform, run the Next.js development server:
 
-1. Navigate to the main project directory:
-   ```bash
-   cd ..
-   ```
-2. Run the Next.js development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-3. Open your browser and visit:
-   ```
-   http://localhost:3000
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open your browser and visit:
+
+```
+http://localhost:3000
+```
 
 This will display the frontend of your e-commerce shop.
 
@@ -147,7 +141,7 @@ npx tsx <file.name>.mjs
 - [Sanity Documentation](https://www.sanity.io/docs) - Learn how to manage content with Sanity.
 - [Vercel Deployment](https://vercel.com/docs) - Learn how to deploy your app on Vercel.
 
----
+--- 
 
 ## 🌐 Deploy on Vercel
 
